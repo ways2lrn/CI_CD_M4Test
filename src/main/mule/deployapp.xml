@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8a906386-7ecf-44be-87c3-b4111801c2b2" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="deployappFlow" doc:id="2a3d5152-281f-46a4-af14-df7b1be83a1b" >
+		<http:listener doc:name="Listener" doc:id="3b6371af-aabb-4068-8ab8-9641148dfbb4" config-ref="HTTP_Listener_config" path="/dep"/>
+		<set-payload value='#["I am Belete Adane."]' doc:name="Set Payload" doc:id="a10bcf5c-2993-432a-b2e1-53b9b6543873" />
+	</flow>
+</mule>
