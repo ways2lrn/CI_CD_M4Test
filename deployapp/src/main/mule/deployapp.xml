@@ -10,5 +10,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<flow name="deployappFlow" doc:id="2a3d5152-281f-46a4-af14-df7b1be83a1b" >
 		<http:listener doc:name="Listener" doc:id="3b6371af-aabb-4068-8ab8-9641148dfbb4" config-ref="HTTP_Listener_config" path="/dep"/>
 		<set-payload value='#["I am Belete Adane."]' doc:name="Set Payload" doc:id="a10bcf5c-2993-432a-b2e1-53b9b6543873" />
+		<logger level="INFO" doc:name="Logger" doc:id="177732ed-7150-4f41-ae9f-6250c3d0bb62" message="#[payload]"/>
 	</flow>
 </mule>
